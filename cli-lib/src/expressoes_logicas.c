@@ -3,22 +3,25 @@
 #include <string.h>
 #include <time.h>
 #include "../include/expressoes_logicas.h"
-
+// V = 1
+// F = 0
 static LogicalExpression faceis[] = {
-    {"A ∧ B",      {0, 0, 0, 1}},
-    {"A ∨ B",      {0, 1, 1, 1}},
+    {"A ∧ B",      {1, 0, 0, 0}},
+    {"A ∨ B",      {1, 1, 1, 0}},
 };
 
 static LogicalExpression medias[] = {
-    {"A ∧ ¬B",     {0, 0, 1, 0}},
-    {"¬A ∨ B",     {1, 1, 0, 1}},
-    {"(A ∧ B) ∨ A",{0, 0, 1, 1}},
+    {"A ∧ ¬B",     {0, 1, 0, 0}},
+    {"¬A ∨ B",     {1, 0, 1, 1}},
+    {"(A ∧ B) ∨ A",{1, 1, 0, 0}},
+    {"A → B",      {1, 0, 1, 1}},
 };
 
 static LogicalExpression dificieis[] = {
-    {"¬(A ∨ B)",         {1, 0, 0, 0}},
-    {"(A ∧ B) ∨ ¬A" ,     {1, 1, 0, 1}},
-    {"¬(A ∧ B) ∧ B",     {0, 1, 0, 0}},
+    {"¬(A ∨ B)",         {0, 0, 0, 1}},
+    {"(A ∧ B) ∨ ¬A" ,    {1, 0, 1, 1}},
+    {"¬(A ∧ B) ∧ B",     {0, 0, 1, 0}},
+    {"A ↔ B",            {1, 0, 0, 1}},
 };
 
 
